@@ -1,0 +1,28 @@
+# action.yml
+name: 'Create-jira-release'
+description: 'This action will create a release for JIRA instance based on github release'
+inputs:
+  jira-email:  # id of input
+    description: 'user email for jira cloud'
+    required: true
+    default: 'example@example.com'
+  jira-api-token:
+    description: 'API-Token for authenticating JIRA'
+    required: true
+    default: '{{ secrets.JIRA_API_TOKEN }}'
+  project-name:
+    description: 'Name of the project in Jira Cloud'
+    required: true
+    default: 'example'
+  release-name:
+    description: "Name of the release"
+    required: true
+    default: 'v0.0.1'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.jira-email }}
+    - ${{ inputs.jira-api-token }}
+    - ${{ inputs.project-name }}
+    - ${{ inputs.release-name }}
