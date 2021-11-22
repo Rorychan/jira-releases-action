@@ -2,6 +2,10 @@
 name: 'Create-jira-release'
 description: 'This action will create a release for JIRA instance based on github release'
 inputs:
+  jira-server:
+    description: 'url for jira server'
+    required: true
+    default: 'http://example.com:2990'
   jira-email:  # id of input
     description: 'user email for jira cloud'
     required: true
@@ -26,3 +30,4 @@ runs:
     - ${{ inputs.jira-api-token }}
     - ${{ inputs.project-name }}
     - ${{ inputs.release-name }}
+    - ${{ inputs.jira-server }}
