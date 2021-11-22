@@ -1,6 +1,6 @@
 FROM python:latest
 COPY . /app
-WORKDIR /app
+COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x entrypoint.sh
 RUN pip install -r requirements.txt
 ENTRYPOINT ['./entrypoint.sh']
