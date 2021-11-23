@@ -34,3 +34,10 @@ You have to [create jira-service-user](https://community.atlassian.com/t5/Jira-A
 |**project-name**|**KEY** of the JIRA project, do not use project name|
 |**release-name**|Name that JIRA release will take, usually is a github release name|
 |**is-released**|[Optional] Define should the release be in **"Released"**  status. Default is false|
+
+###How to create a release:
+
+- Firstly you need to create tag in your repo, tag should be created on the branchthat you want to release.
+```git tag v0.0.1```
+- Then you need to push your tag to your origin ```git push origin v0.0.1```
+- Go to your repo page and [create a release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository)
