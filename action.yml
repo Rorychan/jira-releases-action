@@ -1,7 +1,9 @@
 # action.yml
 name: 'Create-jira-release'
 description: 'This action will create a release for JIRA instance based on github release'
-icon: 'align-justify'
+branding:
+  icon: 'align-justify'
+  color: 'gray-dark'
 inputs:
   jira-server:
     description: 'url for jira server'
